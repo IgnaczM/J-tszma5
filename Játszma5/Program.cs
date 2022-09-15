@@ -74,8 +74,17 @@ namespace Játszma5
             int q = 0;
             while (q<lista.Count)
             {
-                játék temp = new játék(new List<bool>() { }, "Isner", "Mahut");
+                játék temp;
+                if (meccs.Count%2==0)
+                {
+                    temp = new játék(new List<bool>() { }, "Isner", "Mahut");
 
+                }
+                else
+                {
+                    temp = new játék(new List<bool>() { }, "Mahut", "Isner");
+
+                }
 
                 while (!temp.JátékVége())
                 {
