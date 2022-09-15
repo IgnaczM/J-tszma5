@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -60,7 +60,7 @@ namespace Játszma5
             Console.WriteLine("\tBefejezodott a játék:");
             if (PróbaJáték.JátékVége())
             {
-                Console.WriteLine("igen");
+                Console.Write("igen");
             }
             else
             {
@@ -69,6 +69,24 @@ namespace Játszma5
 
 
 
+            List<játék> meccs = new List<játék>();
+
+            int q = 0;
+            while (q<lista.Count)
+            {
+                játék temp = new játék(new List<bool>() { }, "Isner", "Mahut");
+
+
+                while (!temp.JátékVége())
+                {
+                    temp.Hozzáad(lista[q]);
+
+                    q++;
+                }
+                meccs.Add(temp);
+            }
+
+           
         }
 
 
